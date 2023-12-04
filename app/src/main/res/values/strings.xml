@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Pizza de WebMobile</string>
+    <string name="placement_none">Nada</string>
+    <string name="placement_left">Lado esquerdo</string>
+    <string name="placement_right">Lado direito</string>
+    <string name="placement_all">Toda pizza</string>
+    <string name="topping_basil">Presunto</string>
+    <string name="topping_mushroom">Queijo</string>
+    <string name="topping_olive">Pepperoni</string>
+    <string name="topping_peppers">Camarão</string>
+    <string name="topping_pepperoni">Bacon</string>
+    <string name="topping_pineapple">Calabresa</string>
+    <string name="place_order_button">Faça seu pedido (%1$s)</string>
+    <string name="placement_prompt">Onde você quer %1$s na sua pizza?</string>
+    <string name="small">Pequena</string>
+    <string name="medium">Média</string>
+    <string name="large">Grande</string>
+    <string name="extra_large">Extra grande</string>
+</resources>
