@@ -6,22 +6,22 @@ import com.example.pizzamaker.R
 enum class Topping(
     @StringRes val toppingName: Int
 ) {
-    Basil(
+    Presunto(
         R.string.topping_basil
     ),
-    Mushroom(
+    Queijo(
         toppingName = R.string.topping_mushroom
     ),
-    Olive(
+    Pepperoni(
         toppingName = R.string.topping_olive
     ),
-    Peppers(
+    Camarão(
         toppingName = R.string.topping_peppers
     ),
-    Pepperoni(
+    Bacon(
         toppingName = R.string.topping_pepperoni
     ),
-    Pineapple(
+    Calabresa(
         toppingName = R.string.topping_pineapple
     )
 }
