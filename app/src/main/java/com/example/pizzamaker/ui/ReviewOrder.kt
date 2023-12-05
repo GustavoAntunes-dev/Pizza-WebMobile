@@ -59,7 +59,7 @@ fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavControll
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
-            text = "Total: R$price",
+            text = "Total: $price",
             style = MaterialTheme.typography.body1,
             color = androidx.compose.ui.graphics.Color.Black
         )
