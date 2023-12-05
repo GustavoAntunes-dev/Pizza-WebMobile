@@ -1,5 +1,6 @@
 package com.example.pizzamaker.ui
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,14 +14,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.pizzamaker.model.Pizza
 import java.text.NumberFormat
 
 @Composable
-fun ReviewOrderScreen(pizza: Pizza) {
+fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavController) {
+    val pizza = pizzaViewModel.pizza.value
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -31,16 +37,16 @@ fun ReviewOrderScreen(pizza: Pizza) {
     )
     {
         Text(
-            text = "Review Your Order",
+            text = "Revise seu pedido",
             style = MaterialTheme.typography.h5
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Size: ${stringResource(pizza.size.label)}",
+            text = "Tamanho: ${stringResource(pizza.size.label)}",
             style = MaterialTheme.typography.body1
         )
         Text(
-            text = "Toppings:",
+            text = "Recheios:",
             style = MaterialTheme.typography.body1
         )
         pizza.toppings.forEach { (topping, _) ->
@@ -53,25 +59,27 @@ fun ReviewOrderScreen(pizza: Pizza) {
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
-            text = "Total Price: $price",
+            text = "Total: R$price",
             style = MaterialTheme.typography.body1,
-            color = androidx.compose.ui.graphics.Color.Green
+            color = androidx.compose.ui.graphics.Color.Black
         )
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = {
-                // Add action for placing the order
+                pizzaViewModel.resetPizza()
+                navController.popBackStack()
+                Toast.makeText(context, "Pedido Feito!", Toast.LENGTH_SHORT).show()
             }
         ) {
-            Text("Place Order")
+            Text("Pedir sua Pizza!")
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(
+            onClick = {navController.popBackStack()}
+        ) {
+            Text("Editar pedido")
         }
 
     }
 
-}
-
-@Preview
-@Composable
-fun prev() {
-    ReviewOrderScreen(pizza = Pizza())
 }
