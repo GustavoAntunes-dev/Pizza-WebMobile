@@ -65,7 +65,7 @@ fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavControll
         Button(
             onClick = {
                 if (pizza.toppings.isEmpty()) {
-                    Toast.makeText(context, "Pizza não foi feita. Adicione recheios para fazdr a pizza.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Pizza não foi feita. Adicione recheios para fazer a pizza.", Toast.LENGTH_SHORT).show()
                     navController.popBackStack()
                 } else {
                     pizzaViewModel.resetPizza()
