@@ -10,7 +10,7 @@
     <string name="topping_peppers">Camarão</string>
     <string name="topping_pepperoni">Bacon</string>
     <string name="topping_pineapple">Calabresa</string>
-    <string name="place_order_button">Faça seu pedido (%1$s)</string>
+    <string name="place_order_button">Faça seu pedido (R%1$s)</string>
     <string name="placement_prompt">Onde você quer %1$s na sua pizza?</string>
     <string name="small">Pequena</string>
     <string name="medium">Média</string>

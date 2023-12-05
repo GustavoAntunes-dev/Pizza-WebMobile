@@ -1,5 +1,6 @@
 package com.example.pizzamaker.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -10,6 +11,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.intl.Locale
@@ -30,6 +32,7 @@ import java.text.NumberFormat
 object NavRoutes {
     const val PizzaBuilderScreen = "pizzaBuilderScreen"
     const val ReviewOrderScreen = "reviewOrderScreen"
+    const val WelcomeScreen = "WelcomeScreen"
 }
 
 
@@ -43,6 +46,7 @@ fun PizzaBuilderScreen (
 
     Column(
         modifier = modifier
+            .background(Color.White)
     ) {
         ToppingsList(
             pizza = pizza,
@@ -169,7 +173,10 @@ fun NavigationMain() {
     val navController = rememberNavController()
     val pizzaViewModel = viewModel<PizzaViewModel>() // Create ViewModel instance
 
-    NavHost(navController = navController, startDestination = NavRoutes.PizzaBuilderScreen) {
+    NavHost(navController = navController, startDestination = NavRoutes.WelcomeScreen) {
+        composable(NavRoutes.WelcomeScreen) {
+            WelcomeScreen(navController = navController)
+        }
         composable(NavRoutes.PizzaBuilderScreen) {
             PizzaBuilderScreen(pizzaViewModel = pizzaViewModel, navController = navController)
         }

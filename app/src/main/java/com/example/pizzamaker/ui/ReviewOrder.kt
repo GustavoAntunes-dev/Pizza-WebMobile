@@ -1,6 +1,7 @@
 package com.example.pizzamaker.ui
 
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -29,7 +31,8 @@ fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavControll
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     )
@@ -57,7 +60,7 @@ fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavControll
         val currencyFormatter = remember { NumberFormat.getCurrencyInstance() }
         val price = currencyFormatter.format(pizza.price)
         Text(
-            text = "Total: $price",
+            text = "Total: R$price",
             style = MaterialTheme.typography.body1,
             color = androidx.compose.ui.graphics.Color.Black
         )
