@@ -23,6 +23,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.pizzamaker.R
 import com.example.pizzamaker.model.Pizza
 import com.example.pizzamaker.model.PizzaSize
+import com.example.pizzamaker.model.PizzaViewModel
 import com.example.pizzamaker.model.Topping
 import java.text.NumberFormat
 

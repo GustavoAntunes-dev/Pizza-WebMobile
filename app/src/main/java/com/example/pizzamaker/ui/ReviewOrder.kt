@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.pizzamaker.model.PizzaViewModel
 import java.text.NumberFormat
 
 @Composable
@@ -65,7 +66,7 @@ fun ReviewOrderScreen(pizzaViewModel: PizzaViewModel, navController: NavControll
             onClick = {
                 if (pizza.toppings.isEmpty()) {
                     Toast.makeText(context, "Pizza não foi feita. Adicione recheios para fazdr a pizza.", Toast.LENGTH_SHORT).show()
-                    navController.popBackStack() // Navigate back to PizzaBuilderScreen
+                    navController.popBackStack()
                 } else {
                     pizzaViewModel.resetPizza()
                     navController.popBackStack()

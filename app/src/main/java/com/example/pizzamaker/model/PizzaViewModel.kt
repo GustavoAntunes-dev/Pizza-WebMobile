@@ -1,4 +1,4 @@
-package com.example.pizzamaker.ui
+package com.example.pizzamaker.model
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
